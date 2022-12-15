@@ -114,7 +114,7 @@ background-color: rgb(152, 152, 152);</string>
     <property name="title">
      <string>WebSocket</string>
     </property>
-    <widget class="QPushButton" name="ChatServer">
+    <widget class="QPushButton" name="processTextMessage">
      <property name="geometry">
       <rect>
        <x>20</x>

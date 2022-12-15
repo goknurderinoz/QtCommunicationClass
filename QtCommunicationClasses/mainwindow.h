@@ -21,6 +21,13 @@
 #include <QDataStream>
 #include <string>
 
+//WebSocket
+#include <QtCore/QObject>
+#include <QtCore/QList>
+#include <QtCore/QByteArray>
+#include <QtWebSockets/QWebSocketServer>
+#include <QtWebSockets/QWebSocket>
+
 
 namespace Ui {
 class MainWindow;
@@ -33,6 +40,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+Q_SIGNALS:
+    void closed();
 
 private slots:
 //TCP Client
@@ -45,8 +54,12 @@ private slots:
     void on_readDataFromSocket_clicked();
     void on_error(QAbstractSocket::SocketError);
     void on_clearButton_clicked();
-
-    void on_ChatServer_clicked();
+//WebSocket Server
+    void openWSServer(quint16 port, bool debug);
+    void onNewConnection();
+    void socketDisconnected();
+    void on_processTextMessage_clicked(QString message);
+    void processTextMessage(QString message);
 
 private:
     Ui::MainWindow *ui;
@@ -54,6 +67,9 @@ private:
     QTcpServer *server;
     QNetworkAccessManager *manager;
     QNetworkReply *reply;
+    QWebSocketServer *m_pWebSocketServer;
+    QList<QWebSocket *> m_clients;
+    bool m_debug;
 
 };
 
