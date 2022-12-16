@@ -9,15 +9,21 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    ClickedButtons();
     startTcpConnection();
-    openWSServer(1998, false);
-
+    openWSServer(1998);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::ClickedButtons()
+{
+    connect(ui->clearButton, &QPushButton::clicked, this, &MainWindow::clearDisplay);
+    connect(ui->getTCP, &QPushButton::clicked, this, &MainWindow::readDataFromTCPSocket);
+    connect(ui->httpButton, &QPushButton::clicked, this, &MainWindow::getHTTP);
 }
 
 //TCP CLIENT
@@ -54,25 +60,6 @@ void MainWindow::startTcpConnection()
 
 }
 
-// HTTP GET
-void MainWindow::on_httpButton_clicked()
-{
-    manager = new QNetworkAccessManager(this);
-    QNetworkAccessManager * mgr = new QNetworkAccessManager(this);
-    connect(mgr,SIGNAL(finished(QNetworkReply*)),this,SLOT(onfinish(QNetworkReply*)));
-    mgr->get(QNetworkRequest(QUrl("http://127.0.0.1:1880/qt-example")));
-
-}
-
-
-void MainWindow::onfinish(QNetworkReply *rep)
-{
-    QString answer = rep->readAll();
-    qDebug() << answer;
-    ui->terminalLineEdit_2->appendPlainText("Get HTTP: "  + answer);
-}
-
-
 //TCP Server
 void MainWindow::openTCPServer()
 {
@@ -98,7 +85,7 @@ void MainWindow::newTCPConnection()
 }
 
 
-void MainWindow::on_readDataFromSocket_clicked()
+void MainWindow::readDataFromTCPSocket()
 {
     QByteArray data;
 
@@ -108,35 +95,52 @@ void MainWindow::on_readDataFromSocket_clicked()
         qDebug() << "Incoming socket data: " << data;
         socket->flush();
         socket->waitForBytesWritten(50);
-        ui->terminalLineEdit_2->appendPlainText("Received Data : " + data);
+        ui->terminalLineEdit_2->appendPlainText("Get TCP : " + data);
     }
 }
-
-void MainWindow::on_clearButton_clicked()
-{
-    ui->terminalLineEdit_2->clear();
-}
-
 void MainWindow::on_error(QAbstractSocket::SocketError){
     qDebug() << "server error";
     server->close();
 }
 
 
+// HTTP GET
+void MainWindow::getHTTP()
+{
+    manager = new QNetworkAccessManager(this);
+    QNetworkAccessManager * mgr = new QNetworkAccessManager(this);
+    connect(mgr,SIGNAL(finished(QNetworkReply*)),this,SLOT(onfinish(QNetworkReply*)));
+    mgr->get(QNetworkRequest(QUrl("http://127.0.0.1:1882/qt-example")));
+
+}
+
+
+void MainWindow::onfinish(QNetworkReply *rep)
+{
+    QString answer = rep->readAll();
+    qDebug() << answer;
+    ui->terminalLineEdit_2->appendPlainText("Get HTTP: "  + answer);
+}
+
+//Clear Terminal
+void MainWindow::clearDisplay()
+{
+    ui->terminalLineEdit_2->clear();
+    ui->terminalLineEdit_3->clear();
+}
+
 //WebSocket Server
 
-void MainWindow::openWSServer(quint16 port, bool debug)
+void MainWindow::openWSServer(quint16 port)
 {
     m_pWebSocketServer=new QWebSocketServer(QStringLiteral("Echo Server"),
                                             QWebSocketServer::NonSecureMode, this);
-    port = 1998;
     if (m_pWebSocketServer->listen(QHostAddress::Any, port)) {
 
             qDebug() << "Echoserver listening on port" << port;
         connect(m_pWebSocketServer, &QWebSocketServer::newConnection,
                 this, &MainWindow::onNewConnection);
         connect(m_pWebSocketServer, &QWebSocketServer::closed, this, &MainWindow::closed);
-
     }
 }
 
@@ -146,22 +150,15 @@ void MainWindow::onNewConnection()
 
     connect(pSocket, &QWebSocket::textMessageReceived, this, &MainWindow::processTextMessage);
     connect(pSocket, &QWebSocket::disconnected, this, &MainWindow::socketDisconnected);
-
-}
-
-
-void MainWindow::on_processTextMessage_clicked(QString message)
-{
-    ui->terminalLineEdit_2->appendPlainText("Received Data with WS: " + message);
+    //connect(ui->textButton, &QPushButton::clicked, this, &MainWindow::on_processTextMessage_clicked);
 
 }
 
 void MainWindow::processTextMessage(QString message)
 {
     QWebSocket *pClient = qobject_cast<QWebSocket *>(sender());
-        qDebug() << "Message received:" << message;
-        ui->terminalLineEdit_2->appendPlainText("Received Data with WS: " + message);
-
+    qDebug() << "Message received:" << message;
+    ui->terminalLineEdit_3->appendPlainText("Received Data with WS: " + message);
 }
 
 void MainWindow::socketDisconnected()
@@ -174,4 +171,8 @@ void MainWindow::socketDisconnected()
         pClient->deleteLater();
     }
 }
+
+
+
+
 

@@ -28,6 +28,8 @@
 #include <QtWebSockets/QWebSocketServer>
 #include <QtWebSockets/QWebSocket>
 
+#include <QPushButton>
+
 
 namespace Ui {
 class MainWindow;
@@ -40,26 +42,28 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
 Q_SIGNALS:
     void closed();
 
 private slots:
 //TCP Client
     void startTcpConnection();
-    void on_httpButton_clicked();
+    void getHTTP();
     void onfinish(QNetworkReply *rep);
 //TCP Server
     void openTCPServer();
     void newTCPConnection();
-    void on_readDataFromSocket_clicked();
+    void readDataFromTCPSocket();
     void on_error(QAbstractSocket::SocketError);
-    void on_clearButton_clicked();
 //WebSocket Server
-    void openWSServer(quint16 port, bool debug);
+    void openWSServer(quint16 port);
     void onNewConnection();
     void socketDisconnected();
-    void on_processTextMessage_clicked(QString message);
     void processTextMessage(QString message);
+//Buttons and Display Slots
+    void clearDisplay();
+    void ClickedButtons();
 
 private:
     Ui::MainWindow *ui;
@@ -70,7 +74,6 @@ private:
     QWebSocketServer *m_pWebSocketServer;
     QList<QWebSocket *> m_clients;
     bool m_debug;
-
 };
 
 #endif // MAINWINDOW_H
