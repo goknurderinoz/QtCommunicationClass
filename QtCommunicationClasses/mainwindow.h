@@ -57,13 +57,15 @@ private slots:
     void readDataFromTCPSocket();
     void on_error(QAbstractSocket::SocketError);
 //WebSocket Server
-    void openWSServer(quint16 port);
+    void openWSServer();
     void onNewConnection();
     void socketDisconnected();
     void processTextMessage(QString message);
 //Buttons and Display Slots
     void clearDisplay();
     void ClickedButtons();
+//Read Config File
+    void configReader();
 
 private:
     Ui::MainWindow *ui;
