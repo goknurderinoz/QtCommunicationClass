@@ -1,0 +1,37 @@
+name: QMake
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  # Customize the qmake build type here (release, debug, etc.)
+  BUILD_TYPE: debug
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v2
+      with:
+        version: '5.15.2'
+        host: 'windows'
+        target: 'desktop'
+        arch: 'win64_msvc2019_64'
+
+    - name: Configure qmake
+      run: qmake -spec win32-msvc CONFIG+=$BUILD_TYPE -o Makefile ${{github.workspace}}
+
+    - name: Build
+      run: mingw32-make
+
+    - name: Test
+      run: |
+        cd ${{github.workspace}}
+        # Run tests here
