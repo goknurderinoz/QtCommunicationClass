@@ -21,13 +21,20 @@ jobs:
           dir: "${{github.workspace}}/QtCommunicationClasses/"
           install-deps: "true"
 
+      - name: Install Doxygen
+        run: |
+          sudo apt-get update
+          sudo apt-get install doxygen
+
       - name: Build
         run: qmake && make
         working-directory: QtCommunicationClasses
-        
-      - name: Doxygen Deploy
-        uses: DenverCoder1/doxygen-github-pages-action@v1
+
+      - name: Generate Doxygen Documentation
+        run: doxygen Doxyfile
+
+      - name: Deploy Doxygen Documentation
+        uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: docs/html
+          folder: ./docs/html/
