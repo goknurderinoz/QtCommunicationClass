@@ -35,9 +35,6 @@ jobs:
         run: qmake && make
         working-directory: QtCommunicationClasses
 
-      - name: Generate Doxygen Documentation
-        run: doxygen Doxyfile
-
       - name: Deploy Doxygen Documentation
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
