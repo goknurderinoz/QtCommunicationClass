@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
 
@@ -15,29 +15,22 @@ jobs:
         uses: jurplel/install-qt-action@v3
         with:
           version: "5.12.10"
-          host: "linux"
+          host: "windows"
           target: "desktop"
-          arch: "gcc_64"
+          arch: "win64_mingw73"
           dir: "${{github.workspace}}/QtCommunicationClasses/"
           install-deps: "true"
 
-      - name: Install Doxygen
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y doxygen
-
-      - name: Install qmake
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y qt5-qmake
-
       - name: Build
         run: qmake && make
-        working-directory: QtCommunicationClasses
-
-      - name: Doxygen Deploy
-        uses: DenverCoder1/doxygen-github-pages-action@v1
+        working-directory: QtCommunicationClasses  
+        
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: DenverCoder1/doxygen-github-pages-action@v1.2.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITACTIONS_TOKEN }}
           branch: gh-pages
           folder: docs/html
