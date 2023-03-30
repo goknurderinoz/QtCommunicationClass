@@ -26,8 +26,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y doxygen
 
+      - name: Install qmake
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qt5-qmake
+
       - name: Build
-        run: qmake-qt5 && make
+        run: qmake && make
         working-directory: QtCommunicationClasses
 
       - name: Generate Doxygen Documentation
