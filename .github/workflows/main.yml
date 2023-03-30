@@ -15,19 +15,19 @@ jobs:
         uses: jurplel/install-qt-action@v3
         with:
           version: "5.12.10"
-          host: "windows"
+          host: "linux"
           target: "desktop"
-          arch: "win64_mingw73"
+          arch: "gcc_64"
           dir: "${{github.workspace}}/QtCommunicationClasses/"
           install-deps: "true"
 
       - name: Install Doxygen
         run: |
           sudo apt-get update
-          sudo apt-get install doxygen
+          sudo apt-get install -y doxygen
 
       - name: Build
-        run: qmake && make
+        run: qmake-qt5 && make
         working-directory: QtCommunicationClasses
 
       - name: Generate Doxygen Documentation
