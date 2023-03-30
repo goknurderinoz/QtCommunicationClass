@@ -9,18 +9,9 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Get qt cache
-        uses: actions/cache@v3.0.2
-        id: qt
-        with:
-          path: |
-            /qt
-          key: ${{ runner.os }}-qt-${{ hashFiles('/qt.lock') }}
+      - uses: actions/checkout@v2
 
       - name: Install Qt
-        if: steps.qt.outputs.cache-hit != 'true' # önbellekte yoksa QT'yi yükler
         uses: jurplel/install-qt-action@v3
         with:
           version: "5.12.10"
@@ -33,3 +24,18 @@ jobs:
       - name: Build
         run: qmake && make
         working-directory: QtCommunicationClasses
+
+      - name: Install Doxygen
+        run: |
+          choco install doxygen.install -y
+          refreshenv
+
+      - name: Generate Documentation
+        run: |
+          cd doxygen Doxyfile
+
+      - name: Deploy Documentation
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./QtCommunicationClasses/html
