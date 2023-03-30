@@ -31,7 +31,7 @@ jobs:
           refreshenv
 
   deploy:
-      runs-on: windows-latest
+      runs-on: ubuntu-latest
       steps:
         - uses: DenverCoder1/doxygen-github-pages-action@v1
           with:
