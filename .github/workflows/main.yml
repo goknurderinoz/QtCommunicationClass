@@ -30,13 +30,11 @@ jobs:
           choco install doxygen.install -y
           refreshenv
 
-      - name: Generate Documentation
-        run: |
-          doxygen /github/workspace/QtCommunicationClasses/doxygen/Doxyfile
-
-          
-      - name: Deploy Documentation
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./QtCommunicationClasses/html
+  deploy:
+      runs-on: windows-latest
+      steps:
+        - uses: DenverCoder1/doxygen-github-pages-action@v1
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            branch: gh-pages
+            folder: docs/html
