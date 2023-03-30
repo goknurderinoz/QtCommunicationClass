@@ -31,5 +31,4 @@ jobs:
           install-deps: "true"
 
       - name: Build
-        run: qmake && make
-        working-directory: QtCommunicationClasses
+        run: ${{github.workspace}}/QtCommunicationClasses/qmake && make
