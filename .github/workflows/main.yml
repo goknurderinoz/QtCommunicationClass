@@ -32,8 +32,7 @@ jobs:
 
       - name: Generate Documentation
         run: |
-          cd QtCommunicationClasses
-          doxygen Doxyfile
+          cd doxygen Doxyfile
 
       - name: Deploy Documentation
         uses: peaceiris/actions-gh-pages@v3
