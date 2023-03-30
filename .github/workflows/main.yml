@@ -10,8 +10,17 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
+      
+      - name: Get qt cache
+        uses: actions/cache@v3.0.2
+        id: qt
+        with:
+          path: |
+            /qt
+          key: ${{ runner.os }}-qt-${{ hashFiles('/qt.lock') }}
 
       - name: Install Qt
+        if: steps.qt.outputs.cache-hit != 'true' # önbellekte yoksa QT'yi yükler
         uses: jurplel/install-qt-action@v3
         with:
           version: "5.12.10"
