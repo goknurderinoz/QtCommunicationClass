@@ -25,11 +25,6 @@ jobs:
         run: qmake && make
         working-directory: QtCommunicationClasses
 
-      - name: Install Doxygen
-        run: |
-          choco install doxygen.install -y
-          refreshenv
-
   deploy:
       runs-on: ubuntu-latest
       steps:
