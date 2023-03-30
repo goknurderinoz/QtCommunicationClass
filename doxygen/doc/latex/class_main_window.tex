@@ -1,0 +1,239 @@
+\hypertarget{class_main_window}{}\doxysection{Main\+Window Class Reference}
+\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a37bb1bee7c421f8036ea1b2de2a7cc59}{closed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_ab0f1a406e8d7c7a73103ee8b0d0aac3f}{start\+Tcp\+Connection}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a8b9c78b198557a6a46d5a83964a73323}{get\+HTTP}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a9417d82d20e058b3ee522f32c93e6e50}{onfinish}} (QNetwork\+Reply $\ast$rep)
+\item 
+void \mbox{\hyperlink{class_main_window_abde8393d5d1a6837be3ffd301e3c2c3d}{open\+TCPServer}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a38b3f6b0645d185940e4df5e6a7f79bd}{new\+TCPConnection}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_aaeb2e5b70c7ac387357cb59cfc4ce44b}{read\+Data\+From\+TCPSocket}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a4fb716b077b486231a45a90174e5efac}{on\+\_\+error}} (QAbstract\+Socket\+::\+Socket\+Error)
+\item 
+void \mbox{\hyperlink{class_main_window_accd3a8febd172fd15e5f8682ac28eeaa}{open\+WSServer}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_aa30b1c7f83c7425cb2e3b375fbf22886}{on\+New\+Connection}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a94d315224604132b2cbc63dfeb810e7c}{socket\+Disconnected}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a5c0b5e0d8491ec04681e190a496d6eb7}{process\+Text\+Message}} (QString message)
+\item 
+void \mbox{\hyperlink{class_main_window_a700ba8a774e520ea89fd25d446afe01f}{clear\+Display}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a017608aa6987055e499a69c0de1ea6d9}{Clicked\+Buttons}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a504023314cfba10bf5219ee0ec851f69}{config\+Reader}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Main\+Window $\ast$ \mbox{\hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}}
+\item 
+QTcp\+Socket $\ast$ \mbox{\hyperlink{class_main_window_af85cfe62c116f8d2f2021e5411b0356e}{socket}}
+\item 
+QTcp\+Server $\ast$ \mbox{\hyperlink{class_main_window_a4b1e890b4b33f6ff8c22621d2ce55c2d}{server}}
+\item 
+QNetwork\+Access\+Manager $\ast$ \mbox{\hyperlink{class_main_window_ada57966f51638291da96f299bf0cf267}{manager}}
+\item 
+QNetwork\+Reply $\ast$ \mbox{\hyperlink{class_main_window_ac77db992d9cb7084324cbfaaad0605ce}{reply}}
+\item 
+QWeb\+Socket\+Server $\ast$ \mbox{\hyperlink{class_main_window_add862af236395d783d7e3661a920ac1e}{m\+\_\+p\+Web\+Socket\+Server}}
+\item 
+QList$<$ QWeb\+Socket $\ast$ $>$ \mbox{\hyperlink{class_main_window_adb2eacd3f1390d07ea37fa7a7a9bf2a3}{m\+\_\+clients}}
+\item 
+bool \mbox{\hyperlink{class_main_window_a1118d5d0f5b4b472f10c75d18786b1f1}{m\+\_\+debug}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\label{class_main_window_a996c5a2b6f77944776856f08ec30858d}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
+\index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$MainWindow()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_a700ba8a774e520ea89fd25d446afe01f}\label{class_main_window_a700ba8a774e520ea89fd25d446afe01f}} 
+\index{MainWindow@{MainWindow}!clearDisplay@{clearDisplay}}
+\index{clearDisplay@{clearDisplay}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{clearDisplay}{clearDisplay}}
+{\footnotesize\ttfamily void Main\+Window\+::clear\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_a017608aa6987055e499a69c0de1ea6d9}\label{class_main_window_a017608aa6987055e499a69c0de1ea6d9}} 
+\index{MainWindow@{MainWindow}!ClickedButtons@{ClickedButtons}}
+\index{ClickedButtons@{ClickedButtons}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{ClickedButtons}{ClickedButtons}}
+{\footnotesize\ttfamily void Main\+Window\+::\+Clicked\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_a37bb1bee7c421f8036ea1b2de2a7cc59}\label{class_main_window_a37bb1bee7c421f8036ea1b2de2a7cc59}} 
+\index{MainWindow@{MainWindow}!closed@{closed}}
+\index{closed@{closed}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{closed}{closed}}
+{\footnotesize\ttfamily void Main\+Window\+::closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_main_window_a504023314cfba10bf5219ee0ec851f69}\label{class_main_window_a504023314cfba10bf5219ee0ec851f69}} 
+\index{MainWindow@{MainWindow}!configReader@{configReader}}
+\index{configReader@{configReader}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{configReader}{configReader}}
+{\footnotesize\ttfamily void Main\+Window\+::config\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_a8b9c78b198557a6a46d5a83964a73323}\label{class_main_window_a8b9c78b198557a6a46d5a83964a73323}} 
+\index{MainWindow@{MainWindow}!getHTTP@{getHTTP}}
+\index{getHTTP@{getHTTP}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{getHTTP}{getHTTP}}
+{\footnotesize\ttfamily void Main\+Window\+::get\+HTTP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_a38b3f6b0645d185940e4df5e6a7f79bd}\label{class_main_window_a38b3f6b0645d185940e4df5e6a7f79bd}} 
+\index{MainWindow@{MainWindow}!newTCPConnection@{newTCPConnection}}
+\index{newTCPConnection@{newTCPConnection}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{newTCPConnection}{newTCPConnection}}
+{\footnotesize\ttfamily void Main\+Window\+::new\+TCPConnection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_a4fb716b077b486231a45a90174e5efac}\label{class_main_window_a4fb716b077b486231a45a90174e5efac}} 
+\index{MainWindow@{MainWindow}!on\_error@{on\_error}}
+\index{on\_error@{on\_error}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_error}{on\_error}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+error (\begin{DoxyParamCaption}\item[{QAbstract\+Socket\+::\+Socket\+Error}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_a9417d82d20e058b3ee522f32c93e6e50}\label{class_main_window_a9417d82d20e058b3ee522f32c93e6e50}} 
+\index{MainWindow@{MainWindow}!onfinish@{onfinish}}
+\index{onfinish@{onfinish}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onfinish}{onfinish}}
+{\footnotesize\ttfamily void Main\+Window\+::onfinish (\begin{DoxyParamCaption}\item[{QNetwork\+Reply $\ast$}]{rep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_aa30b1c7f83c7425cb2e3b375fbf22886}\label{class_main_window_aa30b1c7f83c7425cb2e3b375fbf22886}} 
+\index{MainWindow@{MainWindow}!onNewConnection@{onNewConnection}}
+\index{onNewConnection@{onNewConnection}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onNewConnection}{onNewConnection}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+New\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_abde8393d5d1a6837be3ffd301e3c2c3d}\label{class_main_window_abde8393d5d1a6837be3ffd301e3c2c3d}} 
+\index{MainWindow@{MainWindow}!openTCPServer@{openTCPServer}}
+\index{openTCPServer@{openTCPServer}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{openTCPServer}{openTCPServer}}
+{\footnotesize\ttfamily void Main\+Window\+::open\+TCPServer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_accd3a8febd172fd15e5f8682ac28eeaa}\label{class_main_window_accd3a8febd172fd15e5f8682ac28eeaa}} 
+\index{MainWindow@{MainWindow}!openWSServer@{openWSServer}}
+\index{openWSServer@{openWSServer}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{openWSServer}{openWSServer}}
+{\footnotesize\ttfamily void Main\+Window\+::open\+WSServer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_a5c0b5e0d8491ec04681e190a496d6eb7}\label{class_main_window_a5c0b5e0d8491ec04681e190a496d6eb7}} 
+\index{MainWindow@{MainWindow}!processTextMessage@{processTextMessage}}
+\index{processTextMessage@{processTextMessage}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{processTextMessage}{processTextMessage}}
+{\footnotesize\ttfamily void Main\+Window\+::process\+Text\+Message (\begin{DoxyParamCaption}\item[{QString}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_aaeb2e5b70c7ac387357cb59cfc4ce44b}\label{class_main_window_aaeb2e5b70c7ac387357cb59cfc4ce44b}} 
+\index{MainWindow@{MainWindow}!readDataFromTCPSocket@{readDataFromTCPSocket}}
+\index{readDataFromTCPSocket@{readDataFromTCPSocket}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{readDataFromTCPSocket}{readDataFromTCPSocket}}
+{\footnotesize\ttfamily void Main\+Window\+::read\+Data\+From\+TCPSocket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_a94d315224604132b2cbc63dfeb810e7c}\label{class_main_window_a94d315224604132b2cbc63dfeb810e7c}} 
+\index{MainWindow@{MainWindow}!socketDisconnected@{socketDisconnected}}
+\index{socketDisconnected@{socketDisconnected}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{socketDisconnected}{socketDisconnected}}
+{\footnotesize\ttfamily void Main\+Window\+::socket\+Disconnected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_ab0f1a406e8d7c7a73103ee8b0d0aac3f}\label{class_main_window_ab0f1a406e8d7c7a73103ee8b0d0aac3f}} 
+\index{MainWindow@{MainWindow}!startTcpConnection@{startTcpConnection}}
+\index{startTcpConnection@{startTcpConnection}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{startTcpConnection}{startTcpConnection}}
+{\footnotesize\ttfamily void Main\+Window\+::start\+Tcp\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_main_window_adb2eacd3f1390d07ea37fa7a7a9bf2a3}\label{class_main_window_adb2eacd3f1390d07ea37fa7a7a9bf2a3}} 
+\index{MainWindow@{MainWindow}!m\_clients@{m\_clients}}
+\index{m\_clients@{m\_clients}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{m\_clients}{m\_clients}}
+{\footnotesize\ttfamily QList$<$QWeb\+Socket $\ast$$>$ Main\+Window\+::m\+\_\+clients\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_main_window_a1118d5d0f5b4b472f10c75d18786b1f1}\label{class_main_window_a1118d5d0f5b4b472f10c75d18786b1f1}} 
+\index{MainWindow@{MainWindow}!m\_debug@{m\_debug}}
+\index{m\_debug@{m\_debug}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{m\_debug}{m\_debug}}
+{\footnotesize\ttfamily bool Main\+Window\+::m\+\_\+debug\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_main_window_add862af236395d783d7e3661a920ac1e}\label{class_main_window_add862af236395d783d7e3661a920ac1e}} 
+\index{MainWindow@{MainWindow}!m\_pWebSocketServer@{m\_pWebSocketServer}}
+\index{m\_pWebSocketServer@{m\_pWebSocketServer}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{m\_pWebSocketServer}{m\_pWebSocketServer}}
+{\footnotesize\ttfamily QWeb\+Socket\+Server$\ast$ Main\+Window\+::m\+\_\+p\+Web\+Socket\+Server\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_main_window_ada57966f51638291da96f299bf0cf267}\label{class_main_window_ada57966f51638291da96f299bf0cf267}} 
+\index{MainWindow@{MainWindow}!manager@{manager}}
+\index{manager@{manager}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{manager}{manager}}
+{\footnotesize\ttfamily QNetwork\+Access\+Manager$\ast$ Main\+Window\+::manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_main_window_ac77db992d9cb7084324cbfaaad0605ce}\label{class_main_window_ac77db992d9cb7084324cbfaaad0605ce}} 
+\index{MainWindow@{MainWindow}!reply@{reply}}
+\index{reply@{reply}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{reply}{reply}}
+{\footnotesize\ttfamily QNetwork\+Reply$\ast$ Main\+Window\+::reply\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_main_window_a4b1e890b4b33f6ff8c22621d2ce55c2d}\label{class_main_window_a4b1e890b4b33f6ff8c22621d2ce55c2d}} 
+\index{MainWindow@{MainWindow}!server@{server}}
+\index{server@{server}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{server}{server}}
+{\footnotesize\ttfamily QTcp\+Server$\ast$ Main\+Window\+::server\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_main_window_af85cfe62c116f8d2f2021e5411b0356e}\label{class_main_window_af85cfe62c116f8d2f2021e5411b0356e}} 
+\index{MainWindow@{MainWindow}!socket@{socket}}
+\index{socket@{socket}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{socket}{socket}}
+{\footnotesize\ttfamily QTcp\+Socket$\ast$ Main\+Window\+::socket\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_main_window_a35466a70ed47252a0191168126a352a5}\label{class_main_window_a35466a70ed47252a0191168126a352a5}} 
+\index{MainWindow@{MainWindow}!ui@{ui}}
+\index{ui@{ui}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Main\+Window$\ast$ Main\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
+\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}
