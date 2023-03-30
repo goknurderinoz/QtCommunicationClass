@@ -35,8 +35,9 @@ jobs:
         run: qmake && make
         working-directory: QtCommunicationClasses
 
-      - name: Deploy Doxygen Documentation
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+      - name: Doxygen Deploy
+        uses: DenverCoder1/doxygen-github-pages-action@v1
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: ./docs/html/
+          folder: docs/html
