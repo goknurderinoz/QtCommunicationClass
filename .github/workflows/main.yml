@@ -32,7 +32,7 @@ jobs:
 
       - name: Generate Documentation
         run: |
-          cd ${{github.workspace}}/QtCommunicationClasses/doxygen/Doxyfile
+          cd ${{github.workspace}}/doxygen/Doxyfile
           
       - name: Deploy Documentation
         uses: peaceiris/actions-gh-pages@v3
