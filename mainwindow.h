@@ -55,11 +55,23 @@ private slots:
     void getHTTP();
     void onfinish(QNetworkReply *rep);
 //TCP Server
+    /**
+       * \brief open TCP server connection.
+       * \param TCP Server
+       * Here is the documentation body containing references
+       * to Qt functions like QPixmap::copy().
+       */
     void openTCPServer();
     void newTCPConnection();
     void readDataFromTCPSocket();
     void on_error(QAbstractSocket::SocketError);
 //WebSocket Server
+    /**
+       * \brief open WebSocket server connection.
+       * \param WebSocket
+       * Here is the documentation body containing references
+       * to Qt functions like QPixmap::copy().
+       */
     void openWSServer();
     void onNewConnection();
     void socketDisconnected();
