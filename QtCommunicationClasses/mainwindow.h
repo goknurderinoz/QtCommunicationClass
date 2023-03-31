@@ -27,12 +27,6 @@
 #include <QtWebSockets/QWebSocket>
 
 #include <QPushButton>
-/**
-   * @brief TCP Socket Uygulaması.
-   * @author Göknur Derinöz
-   * Here is the documentation body containing references
-   * to Qt functions like QPixmap::copy().
-   */
 
 namespace Ui {
 class MainWindow;
@@ -51,6 +45,12 @@ Q_SIGNALS:
 
 private slots:
 //TCP Client
+    /**
+       * \brief A simple description
+       *
+       * Here is the documentation body containing references
+       * to Qt functions like QPixmap::copy().
+       */
     void startTcpConnection();
     void getHTTP();
     void onfinish(QNetworkReply *rep);
