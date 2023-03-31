@@ -49,7 +49,7 @@ private slots:
        * \brief A simple description
        *
        * Here is the documentation body containing references
-       * to Qt functions like QPixmap::copy().
+       * to Qt functions like startTcpConnection().
        */
     void startTcpConnection();
     void getHTTP();
@@ -59,7 +59,7 @@ private slots:
        * \brief open TCP server connection.
        * \param TCP Server
        * Here is the documentation body containing references
-       * to Qt functions like QPixmap::copy().
+       * to Qt functions like openTCPServer().
        */
     void openTCPServer();
     void newTCPConnection();
@@ -70,7 +70,7 @@ private slots:
        * \brief open WebSocket server connection.
        * \param WebSocket
        * Here is the documentation body containing references
-       * to Qt functions like QPixmap::copy().
+       * to Qt functions like openWSServer().
        */
     void openWSServer();
     void onNewConnection();
@@ -80,6 +80,12 @@ private slots:
     void clearDisplay();
     void ClickedButtons();
 //Read Config File
+    /**
+       * \brief A simple description
+       * \param Read Config
+       * Here is the documentation body containing references
+       * to Qt functions like configReader().
+       */
     void configReader();
 
 private:
