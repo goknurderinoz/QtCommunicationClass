@@ -1,0 +1,87 @@
+\hypertarget{mainwindow_8h_source}{}\doxysection{mainwindow.\+h}
+\label{mainwindow_8h_source}\index{QtCommunicationClasses/mainwindow.h@{QtCommunicationClasses/mainwindow.h}}
+\mbox{\hyperlink{mainwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QNetworkAccessManager>}\ \ \ \ \ \ \ \ \textcolor{comment}{//\ to\ make\ request}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QNetworkReply>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ to\ handle\ reply}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TCP\ Socket}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QTcpServer>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TCP\ Server}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}QtWebSockets/qwebsocketserver.h"{}}\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Web\ Socket}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ JSON}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QJsonDocument>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QJsonParseError>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QJsonValue>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <QDataStream>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//WebSocket}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QtCore/QObject>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QtCore/QList>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QtCore/QByteArray>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QtWebSockets/QWebSocketServer>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QtWebSockets/QWebSocket>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}};}
+\DoxyCodeLine{00036\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ Q\_SIGNALS:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a37bb1bee7c421f8036ea1b2de2a7cc59}{closed}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00050\ \textcolor{comment}{//TCP\ Client}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ab0f1a406e8d7c7a73103ee8b0d0aac3f}{startTcpConnection}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a8b9c78b198557a6a46d5a83964a73323}{getHTTP}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a9417d82d20e058b3ee522f32c93e6e50}{onfinish}}(QNetworkReply\ *rep);}
+\DoxyCodeLine{00060\ \textcolor{comment}{//TCP\ Server}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_abde8393d5d1a6837be3ffd301e3c2c3d}{openTCPServer}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a38b3f6b0645d185940e4df5e6a7f79bd}{newTCPConnection}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aaeb2e5b70c7ac387357cb59cfc4ce44b}{readDataFromTCPSocket}}();}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a4fb716b077b486231a45a90174e5efac}{on\_error}}(QAbstractSocket::SocketError);}
+\DoxyCodeLine{00065\ \textcolor{comment}{//WebSocket\ Server}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_accd3a8febd172fd15e5f8682ac28eeaa}{openWSServer}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aa30b1c7f83c7425cb2e3b375fbf22886}{onNewConnection}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a94d315224604132b2cbc63dfeb810e7c}{socketDisconnected}}();}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a5c0b5e0d8491ec04681e190a496d6eb7}{processTextMessage}}(QString\ message);}
+\DoxyCodeLine{00070\ \textcolor{comment}{//Buttons\ and\ Display\ Slots}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a700ba8a774e520ea89fd25d446afe01f}{clearDisplay}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a017608aa6987055e499a69c0de1ea6d9}{ClickedButtons}}();}
+\DoxyCodeLine{00073\ \textcolor{comment}{//Read\ Config\ File}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a504023314cfba10bf5219ee0ec851f69}{configReader}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00077\ \ \ \ \ Ui::MainWindow\ *\mbox{\hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}};}
+\DoxyCodeLine{00078\ \ \ \ \ QTcpSocket\ *\mbox{\hyperlink{class_main_window_af85cfe62c116f8d2f2021e5411b0356e}{socket}};}
+\DoxyCodeLine{00079\ \ \ \ \ QTcpServer\ *\mbox{\hyperlink{class_main_window_a4b1e890b4b33f6ff8c22621d2ce55c2d}{server}};}
+\DoxyCodeLine{00080\ \ \ \ \ QNetworkAccessManager\ *\mbox{\hyperlink{class_main_window_ada57966f51638291da96f299bf0cf267}{manager}};}
+\DoxyCodeLine{00081\ \ \ \ \ QNetworkReply\ *\mbox{\hyperlink{class_main_window_ac77db992d9cb7084324cbfaaad0605ce}{reply}};}
+\DoxyCodeLine{00082\ \ \ \ \ QWebSocketServer\ *\mbox{\hyperlink{class_main_window_add862af236395d783d7e3661a920ac1e}{m\_pWebSocketServer}};}
+\DoxyCodeLine{00083\ \ \ \ \ QList<QWebSocket\ *>\ \mbox{\hyperlink{class_main_window_adb2eacd3f1390d07ea37fa7a7a9bf2a3}{m\_clients}};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_main_window_a1118d5d0f5b4b472f10c75d18786b1f1}{m\_debug}};}
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}
