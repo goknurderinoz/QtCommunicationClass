@@ -98,24 +98,25 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;QtWebSockets/QWebSocket&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespaceUi.html">   37</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceUi.html">Ui</a> {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">class </span><a class="code" href="classMainWindow.html">MainWindow</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classMainWindow.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMainWindow.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classMainWindow.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;Q_SIGNALS:</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classMainWindow.html#a37bb1bee7c421f8036ea1b2de2a7cc59">   50</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMainWindow.html#a37bb1bee7c421f8036ea1b2de2a7cc59">closed</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//TCP Client</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMainWindow.html#ab0f1a406e8d7c7a73103ee8b0d0aac3f">startTcpConnection</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespaceUi.html">   31</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceUi.html">Ui</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">class </span><a class="code" href="classMainWindow.html">MainWindow</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classMainWindow.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMainWindow.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classMainWindow.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;Q_SIGNALS:</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classMainWindow.html#a37bb1bee7c421f8036ea1b2de2a7cc59">   44</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMainWindow.html#a37bb1bee7c421f8036ea1b2de2a7cc59">closed</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//TCP Client</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classMainWindow.html#ab0f1a406e8d7c7a73103ee8b0d0aac3f">startTcpConnection</a>();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMainWindow.html#a8b9c78b198557a6a46d5a83964a73323">getHTTP</a>();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMainWindow.html#a9417d82d20e058b3ee522f32c93e6e50">onfinish</a>(QNetworkReply *rep);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//TCP Server</span></div>
@@ -146,7 +147,7 @@ $(function() {
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// MAINWINDOW_H</span></div>
-<div class="ttc" id="aclassMainWindow_html"><div class="ttname"><a href="classMainWindow.html">MainWindow</a></div><div class="ttdef"><b>Definition:</b> mainwindow.h:42</div></div>
+<div class="ttc" id="aclassMainWindow_html"><div class="ttname"><a href="classMainWindow.html">MainWindow</a></div><div class="ttdef"><b>Definition:</b> mainwindow.h:36</div></div>
 <div class="ttc" id="aclassMainWindow_html_a017608aa6987055e499a69c0de1ea6d9"><div class="ttname"><a href="classMainWindow.html#a017608aa6987055e499a69c0de1ea6d9">MainWindow::ClickedButtons</a></div><div class="ttdeci">void ClickedButtons()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:25</div></div>
 <div class="ttc" id="aclassMainWindow_html_a1118d5d0f5b4b472f10c75d18786b1f1"><div class="ttname"><a href="classMainWindow.html#a1118d5d0f5b4b472f10c75d18786b1f1">MainWindow::m_debug</a></div><div class="ttdeci">bool m_debug</div><div class="ttdef"><b>Definition:</b> mainwindow.h:81</div></div>
 <div class="ttc" id="aclassMainWindow_html_a35466a70ed47252a0191168126a352a5"><div class="ttname"><a href="classMainWindow.html#a35466a70ed47252a0191168126a352a5">MainWindow::ui</a></div><div class="ttdeci">Ui::MainWindow * ui</div><div class="ttdef"><b>Definition:</b> mainwindow.h:74</div></div>
@@ -163,7 +164,7 @@ $(function() {
 <div class="ttc" id="aclassMainWindow_html_a996c5a2b6f77944776856f08ec30858d"><div class="ttname"><a href="classMainWindow.html#a996c5a2b6f77944776856f08ec30858d">MainWindow::MainWindow</a></div><div class="ttdeci">MainWindow(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:9</div></div>
 <div class="ttc" id="aclassMainWindow_html_aa30b1c7f83c7425cb2e3b375fbf22886"><div class="ttname"><a href="classMainWindow.html#aa30b1c7f83c7425cb2e3b375fbf22886">MainWindow::onNewConnection</a></div><div class="ttdeci">void onNewConnection()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:171</div></div>
 <div class="ttc" id="aclassMainWindow_html_aaeb2e5b70c7ac387357cb59cfc4ce44b"><div class="ttname"><a href="classMainWindow.html#aaeb2e5b70c7ac387357cb59cfc4ce44b">MainWindow::readDataFromTCPSocket</a></div><div class="ttdeci">void readDataFromTCPSocket()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:112</div></div>
-<div class="ttc" id="aclassMainWindow_html_ab0f1a406e8d7c7a73103ee8b0d0aac3f"><div class="ttname"><a href="classMainWindow.html#ab0f1a406e8d7c7a73103ee8b0d0aac3f">MainWindow::startTcpConnection</a></div><div class="ttdeci">void startTcpConnection()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:54</div></div>
+<div class="ttc" id="aclassMainWindow_html_ab0f1a406e8d7c7a73103ee8b0d0aac3f"><div class="ttname"><a href="classMainWindow.html#ab0f1a406e8d7c7a73103ee8b0d0aac3f">MainWindow::startTcpConnection</a></div><div class="ttdeci">void startTcpConnection()</div><div class="ttdoc">A simple description.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:54</div></div>
 <div class="ttc" id="aclassMainWindow_html_abde8393d5d1a6837be3ffd301e3c2c3d"><div class="ttname"><a href="classMainWindow.html#abde8393d5d1a6837be3ffd301e3c2c3d">MainWindow::openTCPServer</a></div><div class="ttdeci">void openTCPServer()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:88</div></div>
 <div class="ttc" id="aclassMainWindow_html_ac77db992d9cb7084324cbfaaad0605ce"><div class="ttname"><a href="classMainWindow.html#ac77db992d9cb7084324cbfaaad0605ce">MainWindow::reply</a></div><div class="ttdeci">QNetworkReply * reply</div><div class="ttdef"><b>Definition:</b> mainwindow.h:78</div></div>
 <div class="ttc" id="aclassMainWindow_html_accd3a8febd172fd15e5f8682ac28eeaa"><div class="ttname"><a href="classMainWindow.html#accd3a8febd172fd15e5f8682ac28eeaa">MainWindow::openWSServer</a></div><div class="ttdeci">void openWSServer()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:158</div></div>
@@ -172,7 +173,7 @@ $(function() {
 <div class="ttc" id="aclassMainWindow_html_add862af236395d783d7e3661a920ac1e"><div class="ttname"><a href="classMainWindow.html#add862af236395d783d7e3661a920ac1e">MainWindow::m_pWebSocketServer</a></div><div class="ttdeci">QWebSocketServer * m_pWebSocketServer</div><div class="ttdef"><b>Definition:</b> mainwindow.h:79</div></div>
 <div class="ttc" id="aclassMainWindow_html_ae98d00a93bc118200eeef9f9bba1dba7"><div class="ttname"><a href="classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7">MainWindow::~MainWindow</a></div><div class="ttdeci">~MainWindow()</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:20</div></div>
 <div class="ttc" id="aclassMainWindow_html_af85cfe62c116f8d2f2021e5411b0356e"><div class="ttname"><a href="classMainWindow.html#af85cfe62c116f8d2f2021e5411b0356e">MainWindow::socket</a></div><div class="ttdeci">QTcpSocket * socket</div><div class="ttdef"><b>Definition:</b> mainwindow.h:75</div></div>
-<div class="ttc" id="anamespaceUi_html"><div class="ttname"><a href="namespaceUi.html">Ui</a></div><div class="ttdoc">TCP Socket Uygulaması.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:37</div></div>
+<div class="ttc" id="anamespaceUi_html"><div class="ttname"><a href="namespaceUi.html">Ui</a></div><div class="ttdef"><b>Definition:</b> mainwindow.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
