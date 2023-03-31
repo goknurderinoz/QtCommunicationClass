@@ -11,7 +11,6 @@
 #include <QTcpSocket>                   // TCP Socket
 #include <QTcpServer>                   // TCP Server
 #include "QtWebSockets/qwebsocketserver.h"            // Web Socket
-
 // JSON
 #include <QJsonDocument>
 #include <QJsonParseError>
@@ -20,7 +19,6 @@
 #include <QJsonArray>
 #include <QDataStream>
 #include <string>
-
 //WebSocket
 #include <QtCore/QObject>
 #include <QtCore/QList>
@@ -29,7 +27,12 @@
 #include <QtWebSockets/QWebSocket>
 
 #include <QPushButton>
-
+/**
+   * @brief TCP Socket Uygulaması.
+   * @author Göknur Derinöz
+   * Here is the documentation body containing references
+   * to Qt functions like QPixmap::copy().
+   */
 
 namespace Ui {
 class MainWindow;
@@ -51,12 +54,6 @@ private slots:
     void startTcpConnection();
     void getHTTP();
     void onfinish(QNetworkReply *rep);
-    /**
-         * @brief TCP Client
-         *
-         * @param startTcpConnection() TCP bağlantısını başlatır
-         * @param readDataFromTCPSocket(). TCP den verileri okuyor
-         */
 //TCP Server
     void openTCPServer();
     void newTCPConnection();
