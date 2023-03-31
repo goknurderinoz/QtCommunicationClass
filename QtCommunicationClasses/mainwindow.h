@@ -51,6 +51,12 @@ private slots:
     void startTcpConnection();
     void getHTTP();
     void onfinish(QNetworkReply *rep);
+    /**
+         * @brief TCP Client
+         *
+         * @param startTcpConnection() TCP bağlantısını başlatır
+         * @param readDataFromTCPSocket(). TCP den verileri okuyor
+         */
 //TCP Server
     void openTCPServer();
     void newTCPConnection();
