@@ -59,7 +59,7 @@ When we download the gh-pages branch as a zip, we open the "index.html" file in 
 
 With the comment in the format specified in our source code, we can explain what the code does, specify the parameters, and specify the code author.
 
-![[bdfhbdfb.png]]
+![bdfhbdfb.png]
   
 We can see the comments we specify with index.html.
 
